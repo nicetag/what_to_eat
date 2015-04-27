@@ -1,0 +1,10 @@
+brew install qt
+brew install redis
+
+sip
+pip install pyside
+pyqt4
+
+ln -s qt …..
+
+http://python.jobbole.com/81276/
