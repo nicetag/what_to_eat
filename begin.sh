@@ -1,4 +1,6 @@
 #!/bin/sh
 #!/bin/bash
 
-python main.py
+_mydir="$(dirname $0)"
+
+python ${_mydir}/main.py

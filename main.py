@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding=utf-8 -*-
 
-import __init__
+import _init
 import random
 # import click
 import StoreData

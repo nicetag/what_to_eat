@@ -2,7 +2,7 @@
 # -*- coding=utf-8 -*-
 
 import sqlite3
-from __init__ import conn
+from _init import conn
 
 class store_init(object):
     """basic store class"""
@@ -29,8 +29,8 @@ def do_sql(strr):
         cur = conn.execute(strr)
     return cur
 
-store_list = list(do_sql('''select store_id,StoreName from storelist;'''))
-all_store = list(do_sql('''select * from storelist;'''))
+store_list = list(do_sql('''select store_id,StoreName from storelist'''))
+all_store = list(do_sql('''select * from storelist'''))
 
 def add_new_store(s):
     try:
