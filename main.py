@@ -21,6 +21,8 @@ def main():
         try:
             i = random.randint(0, len(StoreData.store_list))
             print("推荐 {0}！".format(StoreData.store_list[i][1].encode('utf-8')))
+            if StoreData.store_list[i][2]:
+                print("地址为 {0}！".format(StoreData.store_list[i][2].encode('utf-8')))
         except IndexError:
             blank_store()
             
