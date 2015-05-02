@@ -2,11 +2,19 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PyQt4 import QtCore, QtGui, uic
+import os
+
+try:
+    from PyQt4 import QtCore, QtGui, uic   
+except ImportError:
+    print("没有Qt模块，将在命令行操作")
+    os.system("python " + sys.path[0] + "/main.py")
+    os._exit(0)
+
 from StoreData import store_list, all_store, store_init, add_new_store
 from main import main
 
-qtCreatorFile = "UIView.ui" # Enter file here.
+qtCreatorFile = sys.path[0] + "/UIView.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtGui.QMainWindow, Ui_MainWindow):

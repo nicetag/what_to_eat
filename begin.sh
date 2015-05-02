@@ -3,4 +3,4 @@
 
 _mydir="$(dirname $0)"
 
-python ${_mydir}/main.py
+python ${_mydir}/UI.py
