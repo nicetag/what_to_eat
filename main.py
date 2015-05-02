@@ -25,8 +25,7 @@ def main(module):
             result = "推荐 {0}！\n".format(StoreData.store_list[i][1].encode('utf-8'))
             if StoreData.store_list[i][2]:
                 result += "地址为 {0}！".format(StoreData.store_list[i][2].encode('utf-8'))
-        except IndexError:
-            print(i)
+        except ValueError:
             result = "貌似没有可供选择的店呢，新加点店面嗷"
             
     if module == 2:
