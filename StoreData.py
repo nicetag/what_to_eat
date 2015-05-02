@@ -17,11 +17,11 @@ class store_init(object):
 
 def input_store_name():
     store_name = raw_input("去哪家店吃的？（店名）")
-    srore_address = raw_input("店的地址是？（直接回车可省略）")
+    store_address = raw_input("店的地址是？（直接回车可省略）")
     a = store_init()
     a.name(store_name)
     if store_name:
-        a.address(srore_address)
+        a.address(store_address)
     add_new_store(a)
 
 def do_sql(strr):

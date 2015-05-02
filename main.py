@@ -11,32 +11,41 @@ def choice_module():
     dec = int(dec)
     return dec
 
-def blank_store():
-    print("貌似没有可供选择的店呢，新加点店面嗷")
+def print_m(result):
+    if result:
+        print(result)
+    else:
+        print("貌似没有可供选择的店呢，新加点店面嗷")
 
-def main():
-    module = choice_module()
-
+def main(module):
+    import StoreData
+    
     if module == 1:
         try:
             i = random.randint(0, len(StoreData.store_list))
-            print("推荐 {0}！".format(StoreData.store_list[i][1].encode('utf-8')))
+            result = "推荐 {0}！\n".format(StoreData.store_list[i][1].encode('utf-8'))
             if StoreData.store_list[i][2]:
-                print("地址为 {0}！".format(StoreData.store_list[i][2].encode('utf-8')))
+                result += "地址为 {0}！".format(StoreData.store_list[i][2].encode('utf-8'))
+            print_m(result)
         except IndexError:
-            blank_store()
+            print_m(result)
             
     if module == 2:
         StoreData.input_store_name()
+        result = "添加成功"
+        print_m(result)
 
     if module == 3:
         if len(StoreData.store_list) == 0:
             blank_store()
         for i in range(len(StoreData.store_list)):
-            print('''编号：{0}  店名：{1}  地址：{2}\n'''
-                .format(StoreData.all_store[i][0].encode('utf-8'),
-                    StoreData.all_store[i][1].encode('utf-8'),
-                    StoreData.all_store[i][2].encode('utf-8')))
+            result = '''编号：{0}  店名：{1}  地址：{2}\n'''  \
+            .format(StoreData.all_store[i][0].encode('utf-8'),
+                StoreData.all_store[i][1].encode('utf-8'),
+                StoreData.all_store[i][2].encode('utf-8'))
+            print_m(result)
+
+    return result 
 
 if __name__ == '__main__':
-    main()
+    main(choice_module())
